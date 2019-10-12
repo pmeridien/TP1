@@ -43,7 +43,7 @@ class SlidePuzzleModel {
         info = new Controller();
 //        info = new SlidePuzzleGUI();
 //        rows = cols = info.getDim();
-//        System.out.println("dim: " + info.getSlide().getDim());
+        System.out.println("dim: " + info.getSlide().getDim());
 //        rows = cols = info.getSlide().getDim();
         System.out.println("rows = " + rows);
         System.out.println("cols = " + cols);
