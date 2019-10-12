@@ -21,6 +21,7 @@ class SlidePuzzleModel {
     private boolean[] used;
     private ArrayList<JButton> btnList;
     private Controller info;
+    private  SlidePuzzleGUI slide;
 //    private SlidePuzzleGUI info;
 
     //================================================= constructor
@@ -29,7 +30,8 @@ class SlidePuzzleModel {
     }
 
     public SlidePuzzleModel() {
-        info = new Controller();
+       
+        info = new Controller(slide);
         reset();               // Initialize and shuffle tiles.
     } //end constructor
 
@@ -40,11 +42,16 @@ class SlidePuzzleModel {
 //    }//end cons
     public void reset() {
 
-        info = new Controller();
+        info = new Controller(slide);
 //        info = new SlidePuzzleGUI();
 //        rows = cols = info.getDim();
-        System.out.println("dim: " + info.getSlide().getDim());
-//        rows = cols = info.getSlide().getDim();
+try {
+           System.out.println("dim: " + info.getSlide().getDim());
+        rows = cols = info.getSlide().getDim();  
+        } catch (Exception e) {
+            System.out.println("Erreur");
+        }
+       
         System.out.println("rows = " + rows);
         System.out.println("cols = " + cols);
 
