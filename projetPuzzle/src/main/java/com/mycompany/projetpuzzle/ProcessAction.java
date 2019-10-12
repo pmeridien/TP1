@@ -63,40 +63,55 @@ public class ProcessAction implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent event) {
-
-        if ("Redémarrer".equals(event.getActionCommand())) {
-            pane.dispose();
-            
-            pane.getPuzzleModel().reset();  
-            pane.graphic();
-        } else if ("3 x 3".equals(event.getActionCommand())) {
+    
+        if (null == event.getActionCommand()) {
+            dim = 0;
+        } else switch (event.getActionCommand()) {
+            case "Redémarrer":
+                pane.dispose();
+                pane.getPuzzleModel().reset();
+                pane.graphic();
+                break;
 //            dim = 3;
 //            pane.graphic();
-//            pane.getPuzzleModel().reset(); 
-        } else if ("4 x 4".equals(event.getActionCommand())) {
-            dim = 4;
-        } else if ("5 x 5".equals(event.getActionCommand())) {
-            dim = 5;
-        } else if ("6 x 6".equals(event.getActionCommand())) {
-            dim = 6;
-        } else if ("7 x 7".equals(event.getActionCommand())) {
-            dim = 7;
-        } else if ("8 x 8".equals(event.getActionCommand())) {
-            dim = 8;
-        } else if ("9 x 9".equals(event.getActionCommand())) {
-            dim = 9;
-        } else if ("10 x 10".equals(event.getActionCommand())) {
-            dim = 10;
-        }  else if ("PAUSE".equals(event.getActionCommand())) {
-            pane.getGameButton().setText("CONTINUER");
-        }  else if ("CONTINUER".equals(event.getActionCommand())) {
-            pane.getGameButton().setText("PAUSE");
-        }    else if ("Quiter".equals(event.getActionCommand())) {
-            System.exit(0);
-        } else {
-            dim = 0;
+//            pane.getPuzzleModel().reset();
+            case "3 x 3":
+                break;
+            case "4 x 4":
+                dim = 4;
+                break;
+            case "5 x 5":
+                dim = 5;
+                break;
+            case "6 x 6":
+                dim = 6;
+                break;
+            case "7 x 7":
+                dim = 7;
+                break;
+            case "8 x 8":
+                dim = 8;
+                break;
+            case "9 x 9":
+                dim = 9;
+                break;
+            case "10 x 10":
+                dim = 10;
+                break;
+            case "PAUSE":
+                pane.getGameButton().setText("CONTINUER");
+                break;
+            case "CONTINUER":
+                pane.getGameButton().setText("PAUSE");
+                break;
+            case "Quiter":
+                System.exit(0);
+            default:
+                dim = 0;
+                break;
         }
         
         System.out.println(dim1);
+        
     }
 }
