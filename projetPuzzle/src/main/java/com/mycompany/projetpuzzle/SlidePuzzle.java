@@ -24,6 +24,6 @@ public class SlidePuzzle {
 //        window.show();  // make window visible
 //        window.setResizable(false);
         SlidePuzzleGUI window = new SlidePuzzleGUI();
-        window.setVisible(true);
+  
     }//end main
 }//endclass SlidePuzzle
